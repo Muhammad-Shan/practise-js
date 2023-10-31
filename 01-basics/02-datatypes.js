@@ -18,5 +18,5 @@ let isLoggedIn = true //boolean datatype
 // object:
 // console.log(typeof "Coach") //show string
 // console.log(typeof "age") //show number
-// console.log(typeof "undefined") //show undefined this is the type of JavaScript
+// console.log(typeof "undefined") //show undefined (this is the type of JavaScript)
 // console.log(typeof "null") //show object
