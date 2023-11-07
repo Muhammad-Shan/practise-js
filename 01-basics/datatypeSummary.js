@@ -10,9 +10,9 @@ let userEmail; // Value is undefined
 // Define Symbol
 const id = symbol('123') //Symbol unique cheez kye lye use hota is lye ID me use kye ha
 const anotherId = symbol('123') //Symbol me Id or anotherId ki values same pass karna sye bhi result me same values nhi mila gi
-const bigNumber = 56878932443125n // bigNumber represent bigInt // use n in last
+// const bigNumber = 56878932443125n // bigNumber represent bigInt // use n in last
 
-console.log(id === anotherId);
+//console.log(id === anotherId);
 
 
 
@@ -28,12 +28,32 @@ let myObj = {
     age: 20,
 } //Objects write in {} Qarly brakets and enter vales in key value pairs
 
-const myFunction = function(){
-    console.log("Hi, Coach");
-} //Write function and store value in myFunction variable 
+// const myFunction = function(){
+    // console.log("Hi, Coach");
+//} // Write function and store value in myFunction variable 
 // Function kye datatype ko "function Object" bola jata ha
 
+// Easy way to find Datatype of any variable
+// console.log(typeof bigNumber); // typeof use to find Datatype of any variable
 
+// **********************************
 
-//Easy way to find Datatype of any variable
-console.log(typeof bigNumber); // typeof use to find Datatype of any variable
+// Memory types: Stack(use in Primitive), Heap(use in Non-Primitive)
+
+let myname = "coach"
+let anothername = myname
+anothername = "Shan"
+
+// console.log(myname);
+// console.log(anothername);
+
+let userOne = {
+    email : "user@google.com",
+    id : "user@userid"
+}
+
+let userTwo = userOne //get value in userOne
+userTwo.email = "coach.h@google.com"// email, id values access by using . operator
+
+console.log(userOne.email);
+console.log(userTwo.email);
