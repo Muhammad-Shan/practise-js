@@ -54,3 +54,40 @@ function loginUserMessage(username = "Sam") { // user is not input any value sho
 // console.log(loginUserMessage("Coach"))
 // console.log(loginUserMessage("")) // Show this message "just logged in" without enter value
 console.log(loginUserMessage()) // Show this message "undefined just logged in" with empty string
+
+
+
+function calculateCardPrice(...num1) { // ... 3 dots ko hii "Rest or Spread Operator" bolta ha // in kye use cases per hota ha kab is ko rest bola ga or kab spread bola gye //use rest operator to values convert in array
+
+    // function calculateCardPrice(val1, val2, ...num1) { // 1 value Wal1 me or 2 value val2 me a jye gii or baki values rest me a jye gii
+        return num1
+    }
+    
+    // console.log(calculateCardPrice(200, 400, 500, 2000))
+    
+    
+    const user = {
+        username: "Coach",
+        price: 199
+    }
+    
+    function handleObject(anyObject) { // Pass object in function // pass any object
+        console.log(`Username is ${anyObject.username} and price is ${anyObject.price}`);
+    }
+    
+    // handleObject(user)
+    handleObject({
+        username: "Sam",
+        price: 399
+    })
+    
+    
+    
+    // Array
+    const myNewArray = [200, 400, 100, 600]
+    function returnSecondValue(getArray) {
+        return getArray[1]
+    }
+    
+    // console.log(returnSecondValue(myNewArray));
+    console.log(returnSecondValue([200, 400, 100, 1000]));
