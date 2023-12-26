@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chai aur Code</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    // setTimeout(function(){ //yeah 1 martaba hii function ko chalye ga
+    //     console.log("Coach");
+    // }, 2000)
+
+    // setInterval(function(){ //yeah continues chalta jye ga
+    //     console.log("Coach");
+    // }, 2000)
+
+    const changeText = function(){
+        document.querySelector('h1').innerHTML = "JS Series"
+    }
+
+    const changeMe = setTimeout(changeText, 2000)
+
+    document.querySelector('#stop').addEventListener('click', function(){
+        clearTimeout(changeMe)
+        console.log("Stopped");
+    })
+
+    // const sayCoach = function(){ //yeah 1 martaba hii function ko chalye ga
+    //     console.log("Coach");
+    // }
+
+    // setTimeout(sayCoach, 2000) // variable me declare kar kye us ka reference bhi dye sakta ha
+</script>
+</html>
