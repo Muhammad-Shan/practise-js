@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html Events</title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <ul id="images">
+        <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+        <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+        <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+        <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+        <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+        <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+    </ul>
+</body>
+
+<script>
+    // document.getElementById('owl').onclick = function(){ // this "old feature" to write "Events"
+    //     alert('Owl clicked')
+    // }
+
+    
+    // Best approach to use or write "Events"
+    document.getElementById('images').addEventListener('click', function(e){
+        console.log("click inside the ul");
+    }, false) 
+    
+    document.getElementById('owl').addEventListener('click', function(e){
+        console.log("owl clicked");
+        e.stopPropagation() // stopPropagation use karna sye event bubble ho kye uper kye element per nhi jye ga.
+    }, false)
+
+    document.getElementById('google').addEventListener('click', function(e){
+        console.log("google clicked");
+        e.preventDefault()
+        e.stopPropagation()
+    }, false) // 3rd parameter ko "Event Propagation" khata ha. default false hota ha is lye isye likhana ki zaroorat nhi hoti. Event Propagation ka 2 context hota ha 1. Event Bubbling, 2. Event capturing
+
+    // jab sratch sye project banta ha to wo default "Event Bubbling" hota ha means "false" hota ha // bubbling "bottom sye top" kii side me ata ha
+
+    // kuch code ko hum scratch sye nhi likhata waha "Event capturing" use hota ha  means "true" use hota ha //capturing "top sye bottom" kii side me ata ha
+    
+    
+    // reading on events
+    // type (keyboard, Mouse) etc
+    // timestamp (time, date activities kasye change karta ha)
+    // defaultPrevented (Kisi bhi cheez kye default behavior ko ap change kar sakta ho)
+    // target () read
+    // currentTarget () read
+    // toElement () read
+    // srcElement 
+
+
+    // Interview Point of view
+    // clientX, clientY (Yeah client kii position related ata ha)
+    // screenX, screenY (screen ka X kye ha yeah Y kye ha)
+    // altkey, ctrlkey, shiftkey, keyCode (kuch keyboard kii keys bhi direct mil jati ha "kye wo press hoi ha yeah nhi") // keyCode means "A key ka keyCode kye ha, B key ka keyCode kye ha" etc.
+    
+    
+
+    // Assignment Remove image by mouse click
+    document.querySelector('#images').addEventListener('click', function(e){
+        console.log(e.target.tagName); // tagName sye hum tag ka name bhi dekh sakta ha 
+        if (e.target.tagName === 'IMG') {
+            console.log(e.target.id);
+            let removeIt = e.target.parentNode
+            removeIt.remove() 
+        }
+
+        // console.log(e.target.parentNode); //target use karna sye event target aye ga kye kis target sye event occurd ho raha ha 
+        // let removeIt = e.target.parentNode
+        // removeIt.remove() // first method
+        // removeIt.parentNode.removeChild(removeIt) // second method 
+    }, false)
+</script>
+
+</html>
