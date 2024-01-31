@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React Bind</title>
+</head>
+<body>
+    <button>Button Clicked</button>
+
+    <script>
+        class React {
+            constructor(){
+                this.library = "React"
+                this.server = "https://localhost:300"
+
+                // requirement
+                document.querySelector("button")
+                document.addEventListener('click', this.handleClick.bind(this)) // is "bind" sye sara "this" ka refrence bhi usye mil jye ga
+            }
+            handleClick(){
+                console.log("Button Clicked");
+                console.log(this);
+                // console.log(this.server); // is sye sirf server ka access mila ga
+            }
+        }
+
+        const app = new React()
+    </script>
+</body>
+</html>
